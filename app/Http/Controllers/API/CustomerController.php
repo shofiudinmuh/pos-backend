@@ -31,8 +31,8 @@ class CustomerController extends Controller
      */
     public function show(string $id)
     {
-        $customer = Customer::findOrFail($id);
-        return response()->json(['message' => 'Detail customer berhasil diambil!', 'data' => $customer]);
+        $customerDetail = Customer::findOrFail($id);
+        return response()->json(['message' => 'Detail customer berhasil diambil!', 'data' => $customerDetail]);
     }
 
     /**
@@ -40,10 +40,10 @@ class CustomerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $customer = Customer::findOrFail($id);
-        $customer->update($request->all());
+        $customerUpdate = Customer::findOrFail($id);
+        $customerUpdate->update($request->all());
 
-        return response()->json(['message' => 'Customer berhasil diupdate!', 'data' => $customer]);
+        return response()->json(['message' => 'Customer berhasil diupdate!', 'data' => $customerUpdate]);
     }
 
     /**

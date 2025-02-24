@@ -33,8 +33,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        $product = Product::findOrFail($id);
-        return response()->json(['message' => 'Detail product berhasil diambil!', 'data' => $product]);
+        $productDetail = Product::findOrFail($id);
+        return response()->json(['message' => 'Detail product berhasil diambil!', 'data' => $productDetail]);
     }
 
     /**
@@ -42,10 +42,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $product = Product::findOrFail($id);
-        $product->update($request->all());
+        $productDetail = Product::findOrFail($id);
+        $productDetail->update($request->all());
 
-        return response()->json(['message' => 'Product berhasi diupdate!', 'data' => $product]);
+        return response()->json(['message' => 'Product berhasi diupdate!', 'data' => $productDetail]);
     }
 
     /**

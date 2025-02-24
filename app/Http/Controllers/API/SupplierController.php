@@ -31,8 +31,8 @@ class SupplierController extends Controller
      */
     public function show(string $id)
     {
-        $supplier = Supplier::findOrFail($id);
-        return response()->json(['message' => 'Detail supplier berhasil diambil!', 'data' => $supplier]);
+        $supplierDetail = Supplier::findOrFail($id);
+        return response()->json(['message' => 'Detail supplier berhasil diambil!', 'data' => $supplierDetail]);
     }
 
     /**
@@ -40,10 +40,10 @@ class SupplierController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $supplier = Supplier::findOrFail($id);
-        $supplier->update($request->all());
+        $supplierUpdate = Supplier::findOrFail($id);
+        $supplierUpdate->update($request->all());
 
-        return response()->json(['message' => 'Supplier berhasil diupdate!', 'data' => $supplier]);
+        return response()->json(['message' => 'Supplier berhasil diupdate!', 'data' => $supplierUpdate]);
     }
 
     /**

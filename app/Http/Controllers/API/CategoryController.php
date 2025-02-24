@@ -32,8 +32,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $category = Category::findOrFail($id);
-        return response()->json(['message' => 'Detail kategori berhasil diambil!', 'data' => $category]);
+        $categoryDetail = Category::findOrFail($id);
+        return response()->json(['message' => 'Detail kategori berhasil diambil!', 'data' => $categoryDetail]);
     }
 
     /**
@@ -41,9 +41,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category = Category::findOrFail($id);
-        $category->update($request->all());
-        return response()->json(['message' => 'Kategori berhasil diupdate!', 'data' => $category]);
+        $categoryUpdate = Category::findOrFail($id);
+        $categoryUpdate->update($request->all());
+        return response()->json(['message' => 'Kategori berhasil diupdate!', 'data' => $categoryUpdate]);
     }
 
     /**
