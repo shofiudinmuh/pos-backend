@@ -6,21 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Product extends Model
+class MembershipPoin extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description',
-        'price',
-        'stock',
-        'discount',
-        'category_id'
+        'customer_id',
+        'transaction_id',
+        'poin_earned',
+        'poin_redeemed',
+        'balance',
     ];
 
-    public function category(): BelongsTo
+    public function customer(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Customer::class);
     }
 }
